@@ -1,0 +1,14 @@
+4. kaur@kaur-HP-EliteBook-840-G1:~/proov$ scp proov2.txt kaurv@192.168.8.160:~
+5. 11:14:23 kaurv@raspkaurpi: ~ $ scp -r kaur@192.168.8.136:~/proov /tmp/test/proov
+6. 11:22:13 kaurv@raspkaurpi: ~ $ scp -r /tmp/test kaur@192.168.8.136:/tmp
+9.1. 13:00:40 kaurv@raspkaurpi: ~ $ ssh -L 22000:localhost:22 kaur@192.168.8.136
+9.2. 22:49:31 kaurv@raspkaurpi: ~ $ scp -P 22000 /tmp/test kaur@localhost:/tmp/test-Kaur-Varnik
+10. 23:16:48 kaurv@raspkaurpi: ~ $ ssh -p 22000 kaur@localhost
+11.1. ssh -R 220XY:localhost:22 kaur@192.168.8.136 
+11.2. scp -P 220XY kaur@localhost:/tmp/test-eesnimi-perenimi /tmp/ 
+12. ssh -p 220XY kaur@localhost
+13.  
+echo "$(ssh kaurv@192.168.8.160 'hostname; date; ls -lrth ~/*; ls -lrth /tmp/*')" >> log.txt # RasPi
+echo "$(hostname; date; ls -lrth /tmp/*)" >> log.txt # Oma arvuti
+echo "$(ssh kaur@192.168.8.136 'hostname; date; ls -lrth /tmp/*')" >> log.txt # Teine arvuti
+ 
